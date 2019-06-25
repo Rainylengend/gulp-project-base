@@ -1,0 +1,15 @@
+@mixin demo($color: red) {
+  color: $color;
+}
+
+body {
+  @include demo(#369);
+  transform: rotate(30deg);
+  transition: .3s;
+  #app {
+    height: 100px;
+  }
+  background: #666;
+
+}
+
