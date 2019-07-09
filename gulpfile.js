@@ -15,7 +15,7 @@ const cleanCSS = require('gulp-clean-css')
 const sourcemap = require('gulp-sourcemaps')
 
 gulp.task('minify-css', cb => {
-  return gulp.src('dist/resources/css/*.css')
+  gulp.src('dist/resources/css/*.css')
     .pipe(cleanCSS({compatibility: 'ie11'}))
     .pipe(gulp.dest('dist/resources/css'));
   cb()
