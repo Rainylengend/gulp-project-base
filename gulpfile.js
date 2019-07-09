@@ -68,7 +68,8 @@ gulp.task('output', (cb) => {
     gulp.src([
       'src/**',
       '!src/resources/scss/**',
-      '!src/resources/es6/**'
+      '!src/resources/es6/**',
+      '!src/**/*.js.map'
     ])
       .pipe(gulp.dest(output))
       .on('end', function () {
