@@ -14,6 +14,13 @@ exports.getFileName = (file) => {
     const ext = path.extname(file)
     const basename = path.basename(file)
     let dirname = path.dirname(file.split('src')[1])
+    if (ext === '.css') {
+        dirname = '/resources/css'
+        return [
+            dirname,
+            path.join(dirname, basename.split('.')[0] + '.css'),
+        ]
+    }
     return [
         dirname,
         path.join(dirname, basename)
