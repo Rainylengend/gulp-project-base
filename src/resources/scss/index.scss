@@ -3,13 +3,14 @@
 }
 
 body {
-  @include demo(#369);
-  transform: rotate(30deg);
-  transition: .3s;
+  a {
+    @include demo(#369);
+  }
   #app {
     height: 100px;
-  }
-  background: #666;
 
+  }
+  background: lightblue;
+  display: flex;
 }
 

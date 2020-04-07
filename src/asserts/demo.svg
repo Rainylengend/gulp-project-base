@@ -1,0 +1,15 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="-150 -150 300 300">
+    <defs>
+        <linearGradient id="Gradient2" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="teal"/>
+            <stop offset="50%" stop-color="black" stop-opacity=".2"/>
+            <stop offset="100%" stop-color="#399"/>
+        </linearGradient>
+    </defs>
+    <rect x="-150" y="-150" width="300" height="300" fill="url(#Gradient2)"></rect>
+    <text x="10" y="20" text-anchor="middle" font-size="24" stroke-width="3" stroke="#fff" paint-order="stroke">哈哈哈</text>
+    <text x="10" y="60" text-anchor="middle" font-size="24">哈哈哈</text>
+    <circle r="149" stroke-width="2" stroke="red" fill="none"></circle>
+    <polyline points="10 10 100 100 45 -200" stroke="red" fill="none"></polyline>
+    <ellipse rx="100" ry="50" fill="none" stroke="teal"></ellipse>
+</svg>
