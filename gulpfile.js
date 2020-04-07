@@ -46,7 +46,7 @@ app.use((req, res, next) => {
 })
 
 app.use(express.static(
-    path.resolve(__dirname, 'src')
+    path.resolve(__dirname, root)
 ))
 
 
