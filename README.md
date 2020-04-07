@@ -4,7 +4,7 @@
 开发环境，编译参数的js、css文件会放到内存当中方便读取
 
 ### 关于scss编译
-该项目默认只编译`src/resources/scss` 下面的scss文件并输出到 `src/resources/css`目录下面；**特别注意**：如果你在scss目录下面建了一个index.scss文件，那么正确的引入路径如下所示
+该项目默认会编译src下面所有的scss文件，并输出到当前位置；**特别注意**：如果你在`resouces/css`目录下面建了一个index.scss文件，那么正确的引入路径如下所示
 
 ```html
 <link rel="stylesheet" href="resources/css/index.css">
