@@ -1,21 +1,29 @@
 const path = require('path')
+const config = {
+    // 应用端口
+    port: 9091,
 
-// 应用端口
-exports.port = 9091
+    // 应用根目录
+    root: 'src',
 
-// 应用根目录
-exports.root = 'src'
-
-// 打包目录
-exports.output = 'dist'
-
-
-exports.getFileName = (file) => {
-    const ext = path.extname(file)
-    const basename = path.basename(file)
-    let dirname = path.dirname(file.split('src')[1])
-    return [
-        dirname,
-        path.join(dirname, basename)
-    ]
+    // 打包目录
+    output: 'dist',
+    getFileName(file) {
+        const basename = path.basename(file)
+        let dirname = transformSep(path.dirname(file.split(config.root)[1]))
+        return [
+            dirname,
+            transformSep(
+                path.join(dirname, basename)
+            )
+        ]
+    }
 }
+
+
+function transformSep(file) {
+    const sep = path.sep
+    return file.split(sep).join('/')
+}
+
+module.exports = config
