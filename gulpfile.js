@@ -52,7 +52,7 @@ app.use(express.static(
 
 gulp.task('minify-css', cb => {
     // nested, expanded, compact, compressed
-    gulp.src('src/resources/scss/*.scss')
+    gulp.src('src/**/*.scss')
         .pipe(
             sass({
                 outputStyle: 'expanded'
@@ -62,7 +62,7 @@ gulp.task('minify-css', cb => {
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie11'}))
         .pipe(gulp.dest(
-            path.join(output, 'resources/css')
+            path.join(output)
         ))
         .on('end', () => {
             cb()
@@ -87,7 +87,7 @@ gulp.task('uglify', cb => {
 gulp.task('connect', () => {
     app.listen(port, err => {
         if (err) {
-            console.log(err);
+            log(err);
             return
         }
         log(`服务器启动在: http://localhost:${port}`)
@@ -99,7 +99,7 @@ gulp.task('output', (cb) => {
     rimraf('dist', function () {
         gulp.src([
             'src/**',
-            '!src/resources/scss/**',
+            '!src/**/*.scss',
             '!src/**/*.js',
             'src/**/*.min.js',
         ])
@@ -114,7 +114,7 @@ gulp.task('output', (cb) => {
 
 gulp.task('watch', (cb) => {
     gulp.watch('src/**/*.js', buildEs6)
-    gulp.watch('src/resources/scss/*.scss', buildScss)
+    gulp.watch('src/**/*.scss', buildScss)
     cb()
 })
 
@@ -125,7 +125,7 @@ gulp.task('build', gulp.series('output', gulp.parallel('uglify', 'minify-css')))
 async function buildScss() {
     return new Promise(resolve => {
         // nested, expanded, compact, compressed
-        gulp.src('src/resources/scss/*.scss')
+        gulp.src('src/**/*.scss')
             .pipe(
                 sass({
                     outputStyle: 'expanded'

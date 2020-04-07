@@ -4,7 +4,7 @@ class Demo {
   }
   sayA() {
     console.log(this.a + 555);
-    return 'result'
+    return 'result1'
   }
 }
 
